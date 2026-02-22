@@ -121,36 +121,6 @@ Moved face detection off the cloud and onto an edge device using AWS IoT Greengr
 
 ---
 
-## Repository Structure
-
-```
-elastic-face-recognition-aws/
-│
-├── project1-iaas/
-│   ├── part1-web-tier/
-│   │   └── server.py               # Flask web server with S3 + SimpleDB
-│   └── part2-app-tier/
-│       ├── server.py               # Flask web server with SQS pipeline
-│       ├── controller.py           # Custom autoscaling controller
-│       └── backend.py              # App tier worker with PyTorch inference
-│
-├── project2-paas/
-│   ├── part1-lambda/
-│   │   ├── face-detection/
-│   │   │   └── fd_lambda.py        # Face detection Lambda (MTCNN)
-│   │   └── face-recognition/
-│   │       └── fr_lambda.py        # Face recognition Lambda (FaceNet)
-│   └── part2-edge/
-│       ├── face-detection/
-│       │   └── fd_component.py     # Greengrass edge component (MTCNN + MQTT)
-│       └── face-recognition/
-│           └── fr_lambda.py        # Face recognition Lambda (FaceNet)
-│
-└── README.md
-```
-
----
-
 ## Notes
 
 - All AWS resources were deployed in `us-east-1`
